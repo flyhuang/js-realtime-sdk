@@ -90,7 +90,7 @@ declare module LeanCloudRealtime {
     recall(message: MessagePointer): Promise<RecalledMessage>;
   }
 
-  declare type MessagePointer = Message | {id: string, timestamp: Date|number};
+  type MessagePointer = Message | {id: string, timestamp: Date|number};
 
   export interface AVMessage {
     toJSON(): any;
@@ -116,7 +116,7 @@ declare module LeanCloudRealtime {
   export class TypedMessage extends Message {
     attributes: {};
     text: string;
-    get title(): string;
+    title(): string;
     type: number;
     getAttributes(): {};
     getText(): string;
@@ -193,7 +193,7 @@ declare module LeanCloudRealtime {
     INVALID_MESSAGING_TARGET,
     MESSAGE_REJECTED_BY_APP,
   }
-  
+
   export function messageType(type: number): Function
   export function messageField(fields: string[]): Function
 }
